@@ -1,0 +1,77 @@
+#include<iostream.h>
+#include<graphics.h>
+#include<conio.h>
+#include<conio.h>
+#include<math.h>
+void Bresenham(int x1,int y1,int x2,int y2,int col)
+ {
+  int dx,dy,p;
+  dx=abs(x2-x1);
+  dy=abs(y2-y1);
+  int x=x1;
+  int y=y1;
+  if(dx>=dy)
+   {
+    p=2*dy-dx;
+    do{
+     putpixel(x,y,col);
+     if(p>0)
+      {
+      if(y2>y1)
+      {
+       y++;
+      }
+      else
+       {
+	y--;
+       }
+       p=p+2*dy-2*dx;
+      }
+     else
+      {
+       p=p+2*dy;
+      }
+     if(x1<x2)
+     {
+      x++;
+     }
+     else
+      {
+       x--;
+      }
+    }while(x!=x2);
+    putpixel(x,y,col);
+   }
+  else
+   {
+    p=2*dx-dy;
+    do{
+     putpixel(x,y,col);
+     if(p>0)
+      {
+       if(x1<x2)
+       {
+	x++;
+       }
+      else
+       {
+	x--;
+       }
+       p=p+2*dx-2*dy;
+      }
+     else
+      {
+       p=p+2*dx;
+      }
+     if(y1<y2)
+     {
+     y++;
+     }
+    else
+     {
+      y--;
+     }
+    }while(y!=y2);
+    putpixel(x,y,col);
+   }
+ }
