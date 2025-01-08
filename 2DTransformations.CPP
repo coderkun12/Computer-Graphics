@@ -1,3 +1,4 @@
+// This code contains: Reflection, Rotation, X-shearing and Y-shearing
 #include<stdio.h>
 #include<dos.h>
 #include<conio.h>
